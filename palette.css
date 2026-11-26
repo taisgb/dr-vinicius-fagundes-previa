@@ -72,7 +72,7 @@ main>.trust{background-color:#f8f9fc;}main>.about,main>.clinic,main>.faq,main>.s
   border-radius:0 0 var(--portrait-bottom-radius) var(--portrait-bottom-radius);
   background:transparent;
 }
-.hero-shell .hero-wave{color:var(--section)}
+.hero-shell .hero-wave{color:#D6DDEF}
 @media(max-width:800px){
   .hero-shell .hero{padding-bottom:60px}
   .hero-shell .hero-art{padding:20px 12px 0;margin-top:8px}
@@ -110,3 +110,6 @@ main>.trust{background-color:#f8f9fc;}main>.about,main>.clinic,main>.faq,main>.s
   #cuidados .stage-grid.stage-grid-three{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto;gap:12px}
   #cuidados .stage-grid.stage-grid-three>.stage{min-height:220px;padding:32px 20px 26px}
 }
+
+/* Transição da hero em azul suave mais marcado, mantendo a faixa de credenciais clara. */
+main>.trust{background-color:#f8f9fc;background-image:linear-gradient(180deg,#D6DDEF 0%,#eef1f8 55%,#f8f9fc 100%);}
