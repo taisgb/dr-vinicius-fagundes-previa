@@ -49,3 +49,32 @@ main>.trust{background-color:#f8f9fc;}main>.about,main>.clinic,main>.faq,main>.s
 .about-refined .vinicius-about{min-height:0;overflow:hidden;background:linear-gradient(145deg,#fffefd,#eef0f8)}
 .about-refined .vinicius-about>img{display:block;width:100%;height:auto;max-height:490px;object-fit:contain;object-position:center bottom;background:transparent;flex:0 0 auto}
 @media(max-width:800px){.hero-shell .hero-art .vinicius-portrait{width:min(100%,350px)}.hero-shell .hero-art .vinicius-portrait img{max-height:420px}.about-refined .vinicius-about>img{max-height:390px}}
+
+/* Hero — moldura e retrato compartilham a mesma base curva. */
+.hero-shell .hero{padding-bottom:clamp(76px,7vw,108px)}
+.hero-shell .hero-art{padding:24px 16px 0;min-height:0;align-self:center;grid-template-columns:minmax(0,1fr)}
+.hero-shell .hero-art .vinicius-portrait{
+  --portrait-bottom-radius:clamp(44px,7vw,88px);
+  position:relative;isolation:isolate;
+  width:min(100%,460px);max-width:100%;margin:0 auto;
+  aspect-ratio:auto;overflow:visible;background:transparent;
+}
+.hero-shell .hero-art .vinicius-portrait::before{
+  content:"";position:absolute;inset:12% 0 0;z-index:-1;
+  background:linear-gradient(145deg,#ffda8c,#f5c451);
+  border-radius:49% 46% var(--portrait-bottom-radius) var(--portrait-bottom-radius) / 42% 40% var(--portrait-bottom-radius) var(--portrait-bottom-radius);
+  box-shadow:0 4px 10px rgb(32 38 83 / .08),0 20px 32px -12px rgb(32 38 83 / .24);
+  pointer-events:none;
+}
+.hero-shell .hero-art .vinicius-portrait img{
+  display:block;position:relative;width:100%;height:auto;max-height:none;
+  object-fit:contain;object-position:center bottom;
+  border-radius:0 0 var(--portrait-bottom-radius) var(--portrait-bottom-radius);
+  background:transparent;
+}
+.hero-shell .hero-wave{color:var(--section)}
+@media(max-width:800px){
+  .hero-shell .hero{padding-bottom:60px}
+  .hero-shell .hero-art{padding:20px 12px 0;margin-top:8px}
+  .hero-shell .hero-art .vinicius-portrait{width:min(100%,350px)}
+}
